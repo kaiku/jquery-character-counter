@@ -20,6 +20,7 @@
             exceeded: false,
             counterSelector: false,
             limit: 150,
+            min: 0,
             counterWrapper: 'span',
             counterCssClass: 'counter',
             counterFormat: '%1',
@@ -75,7 +76,7 @@
             var remaining        = options.limit - characterCount;
             var counter = options.counterSelector ? $(options.counterSelector) : $(element).next("." + options.counterCssClass);
 
-            if( remaining < 0 )
+            if( remaining < 0  || characterCount < options.min)
             {
                 counter.addClass(options.counterExceededCssClass);
                 options.exceeded = true;
@@ -90,7 +91,10 @@
                 }
             }
 
-            counter.html(renderText(remaining));
+            if (characterCount < options.min)
+                counter.html(renderText(options.min - characterCount));
+            else
+                counter.html(renderText(remaining));
         };    
 
         function bindEvents(element)

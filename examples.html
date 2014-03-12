@@ -93,6 +93,13 @@
               </div>
 						</form>
 					</div>
+					<div class="example">
+						<h3>#8 - Min & Max Limit</h3>
+						<form>
+							<p>Minimum of 5 characters. Maximum of 25 characters.</p>
+							<textarea id="min_max_counter"></textarea>
+						</form>
+					</div>
 				</article>
 			</section>
 		</main>
@@ -106,7 +113,7 @@
 	<script>
 		$(function(){
 			//Example #1
-            $("#name").characterCounter();
+            $("#name").characterCounter({});
 
             //Example #2
             $(".count_me").characterCounter();
@@ -146,6 +153,12 @@
             //Example #6
             $("#multiple_counters").characterCounter({
               counterSelector: '.a_counter'
+            });
+
+            //Example #6
+            $("#min_max_counter").characterCounter({
+              min: 5,
+              limit: 25
             });
             
 		});
