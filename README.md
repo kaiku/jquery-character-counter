@@ -2,7 +2,7 @@
 
 A simple, Twitter style character counter for HTML input fields. Based on your specified limit, the plugin simply adds a span ( by default ) after your HTML input and updates it as you type.
 
-__Updated:__
+__Updates:__
 * Added min option to allow for a minimum number of characters allowed
 
 __Features:__
