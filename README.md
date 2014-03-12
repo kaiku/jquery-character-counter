@@ -2,6 +2,9 @@
 
 A simple, Twitter style character counter for HTML input fields. Based on your specified limit, the plugin simply adds a span ( by default ) after your HTML input and updates it as you type.
 
+__Updated:__
+* Added min option to allow for a minimum number of characters allowed
+
 __Features:__
 * Ctrl & V paste support
 * Right click & paste support
@@ -56,6 +59,7 @@ The following options are currently available:
 ```javascript
 {
 limit: 150,
+min: 0,
 counterWrapper: 'span',
 counterCssClass: 'counter',
 counterFormat: '%1',
@@ -67,6 +71,7 @@ customFields: {}
 ```
 
 __limit__ - the number of characters you wish to limit.  
+__min__ - the number of characters you wish to set as the minimum allowed.  
 __counterWrapper__ - the element you wish to wrap your counter in.  
 __counterCssClass__ - the CSS class to apply to your counter.  
 __counterFormat__ - the format of your counter text where '%1' will be replaced with the remaining character count.  
