@@ -91,10 +91,7 @@
                 }
             }
 
-            if (characterCount < options.min)
-                counter.html(renderText(options.min - characterCount));
-            else
-                counter.html(renderText(remaining));
+            counter.html(renderText(remaining));
         };    
 
         function bindEvents(element)
