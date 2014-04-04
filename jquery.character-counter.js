@@ -37,7 +37,7 @@
     options = $.extend({}, defaults, options);
 
     return this.each(function () {
-      if (!options.counterSelector) {
+      if (!options.silentMode && !options.counterSelector) {
         $(this).after(generateCounter());
       }
       bindEvents(this);
