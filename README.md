@@ -4,6 +4,7 @@ A simple, Twitter style character counter for HTML input fields. Based on your s
 
 __Updates:__
 * Added min option to allow for a minimum number of characters allowed
+* Triggers `character-counter.change` on the element when the character count changes.
 
 __Features:__
 * Ctrl & V paste support
