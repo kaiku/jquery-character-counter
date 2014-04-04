@@ -49,8 +49,12 @@ __Javascript:__
 $("#count_me").characterCounter({
   limit: '250'  
 });
+
+$("#count_me").on('character-counter.change', function(e) {
+  console.log(e.characterCounter.total, e.characterCounter.remaining);
+});
 ```
-***
+
 
 ### Options
 
@@ -66,7 +70,8 @@ counterFormat: '%1',
 counterExceededCssClass: 'exceeded',
 onExceed: function(count){},
 onDeceed: function(count){},
-customFields: {}
+customFields: {},
+silentMode: false
 }
 ```
 
@@ -79,3 +84,4 @@ __counterExceededCssClass__ - the CSS class to apply when your limit has been ex
 __onExceed__ - this function is called when the limit is breached   
 __onDeceed__ - this function is called when the limit, having previously been exceeded, is now deceeded
 __customFields__ - key value pairs of custom options to be added to the counter such as class, data attributes etc.
+__silentMode__ - if true, will not write the count to an HTML element (you can still listen for the appropriate triggered events)

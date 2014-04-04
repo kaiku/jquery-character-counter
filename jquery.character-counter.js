@@ -17,8 +17,7 @@
   }
 }(function ($) {
   $.fn.characterCounter = function (options) {
-    var defaults,
-        options;
+    var defaults;
 
     defaults = {
         exceeded: false,
@@ -31,7 +30,8 @@
         counterExceededCssClass: 'exceeded',
         onExceed: function (count) {},
         onDeceed: function (count) {},
-        customFields: {}
+        customFields: {},
+        silentMode: false
     };
 
     options = $.extend({}, defaults, options);
@@ -78,8 +78,7 @@
         counter.addClass(options.counterExceededCssClass);
         options.exceeded = true;
         options.onExceed(characterCount);
-      }
-      else {
+      } else {
         if (options.exceeded) {
           counter.removeClass(options.counterExceededCssClass);
           options.onDeceed(characterCount);
@@ -87,7 +86,16 @@
         }
       }
 
-      counter.html(renderText(remaining));
+      if (!options.silentMode) {
+        counter.html(renderText(remaining));
+      }
+
+      $(element).trigger($.Event('character-counter.change', {
+        characterCounter: {
+          total: characterCount,
+          remaining: remaining
+        }
+      }));
     };
 
     function bindEvents(element) {
