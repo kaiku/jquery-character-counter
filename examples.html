@@ -109,11 +109,15 @@
 		<small>Copyright &copy; <time datetime="2013">2013</time></small>		
 	</footer>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="jquery.charactercounter.js"></script>
+	<script type="text/javascript" src="jquery.character-counter.js"></script>
 	<script>
 		$(function(){
 			//Example #1
             $("#name").characterCounter({});
+
+            $('#name').on('character-counter.change', function(e) {
+                console.log(e.characterCounter.total, e.characterCounter.remaining);
+            });
 
             //Example #2
             $(".count_me").characterCounter();
