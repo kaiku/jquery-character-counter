@@ -1,0 +1,21 @@
+{
+  "name": "jquery-character-counter",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kaiku/jquery-character-counter",
+  "authors": [
+    "Greg Kuwaye <greg.kuwaye@gmail.com>"
+  ],
+  "description": "A simple, Twitter style character counter for HTML input fields.",
+  "main": "jquery.character-counter.js",
+  "keywords": [
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
