@@ -120,6 +120,15 @@
                     <textarea id="min_max_counter"></textarea>
                 </form>
             </div>
+
+            <div class="example">
+                <h3>#9 - Event Triggering and Listening with Silent Mode</h3>
+
+                <form>
+                    <p>Open the console to see the output. Listen for this event and add your own custom logic.</p>
+                    <textarea id="silent_mode"></textarea>
+                </form>
+            </div>
         </div>
     </section>
 </div>
@@ -175,6 +184,16 @@
         $("#min_max_counter").characterCounter({
             min: 5,
             limit: 25
+        });
+
+        // Example #9
+        $("#silent_mode").characterCounter({
+            silentMode: true
+        });
+
+        $('#silent_mode').on('character-counter.change', function (e) {
+            var c = e.characterCounter;
+            console.log('Example #9', c.total, c.remaining);
         });
     });
 </script>
